@@ -1,0 +1,95 @@
+.exp-section { padding: 6rem 0; background: var(--bg-soft); }
+
+.exp-layout { display: flex; gap: 2rem; margin-top: 3rem; position: relative; }
+.timeline-line {
+  position: absolute; left: 0; top: 24px; bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--accent), var(--accent2), transparent);
+  transform-origin: top; border-radius: 2px;
+}
+.exp-card {
+  flex: 1; margin-left: 2.5rem;
+  background: white;
+  border: 1px solid rgba(14,165,233,0.12);
+  border-radius: 22px; padding: 2rem;
+  box-shadow: 0 4px 20px rgba(14,165,233,0.07);
+  position: relative; overflow: hidden;
+}
+.exp-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2), #10b981);
+}
+.exp-card::after {
+  content: ''; position: absolute; left: -2.9rem; top: 1.5rem;
+  width: 13px; height: 13px;
+  background: var(--accent);
+  border: 3px solid white;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(14,165,233,0.3);
+}
+.exp-header { display: flex; align-items: flex-start; gap: 1.25rem; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(14,165,233,0.1); }
+.company-icon {
+  width: 52px; height: 52px;
+  background: var(--accent-light);
+  border: 1px solid rgba(14,165,233,0.2);
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent); flex-shrink: 0;
+}
+.exp-title { font-size: 1.25rem; font-weight: 800; color: var(--text); margin-bottom: 0.2rem; }
+.exp-company { font-size: 0.83rem; color: var(--accent-dark); font-weight: 700; letter-spacing: 0.04em; margin-bottom: 0.5rem; }
+.exp-date { display: flex; align-items: center; gap: 0.4rem; font-size: 0.78rem; color: var(--text-muted); font-weight: 500; }
+.exp-badge {
+  background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.25);
+  color: #059669; font-size: 0.68rem; font-weight: 600;
+  padding: 0.15rem 0.55rem; border-radius: 100px;
+}
+.exp-tech { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.75rem; }
+.exp-tech-tag {
+  font-size: 0.73rem; font-weight: 600;
+  padding: 0.3rem 0.7rem;
+  background: rgba(99,102,241,0.07);
+  border: 1px solid rgba(99,102,241,0.18);
+  border-radius: 6px; color: var(--accent2);
+}
+.exp-achievements { display: flex; flex-direction: column; gap: 0.6rem; }
+.achievement-row {
+  display: flex; align-items: flex-start; gap: 0.75rem;
+  padding: 0.7rem 0.9rem; border-radius: 10px;
+  transition: background 0.2s;
+}
+.achievement-row:hover { background: var(--accent-light); }
+.check-icon { color: #10b981; flex-shrink: 0; margin-top: 2px; }
+.achievement-text { font-size: 0.89rem; color: var(--text-dim); line-height: 1.6; flex: 1; font-weight: 400; }
+.achievement-tag {
+  font-size: 0.66rem; font-weight: 600;
+  color: var(--text-muted);
+  background: var(--bg-soft);
+  border: 1px solid rgba(14,165,233,0.12);
+  border-radius: 5px; padding: 0.15rem 0.45rem;
+  white-space: nowrap; align-self: flex-start; margin-top: 3px;
+}
+
+.exp-highlight {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  margin-top: 2.5rem;
+  background: white;
+  border: 1px solid rgba(14,165,233,0.12);
+  border-radius: 18px; overflow: hidden;
+  box-shadow: 0 4px 16px rgba(14,165,233,0.06);
+}
+.highlight-item { padding: 1.5rem; display: flex; flex-direction: column; align-items: center; gap: 0.35rem; text-align: center; transition: background 0.2s; }
+.highlight-item:hover { background: var(--accent-light); }
+.hl-value { font-size: 1.55rem; font-weight: 800; color: var(--accent); line-height: 1; }
+.hl-label { font-size: 0.7rem; font-weight: 600; color: var(--text-muted); }
+.highlight-divider { width: 1px; background: rgba(14,165,233,0.1); align-self: stretch; }
+
+@media (max-width: 768px) {
+  .exp-highlight { grid-template-columns: repeat(2, 1fr); }
+  .highlight-divider:nth-child(4) { display: none; }
+  .timeline-line, .exp-card::after { display: none; }
+  .exp-card { margin-left: 0; }
+}
+@media (max-width: 480px) {
+  .achievement-tag { display: none; }
+}

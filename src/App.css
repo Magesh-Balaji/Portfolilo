@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap');
+
+:root {
+  --bg: #ffffff;
+  --bg-soft: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-card2: #f1f5f9;
+  --accent: #0ea5e9;
+  --accent-dark: #0284c7;
+  --accent2: #6366f1;
+  --accent3: #10b981;
+  --accent-light: #e0f2fe;
+  --text: #0f172a;
+  --text-muted: #64748b;
+  --text-dim: #475569;
+  --border: rgba(14, 165, 233, 0.15);
+  --border-strong: rgba(14, 165, 233, 0.35);
+  --shadow: 0 4px 24px rgba(14, 165, 233, 0.1);
+  --shadow-lg: 0 20px 60px rgba(14, 165, 233, 0.15);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.app {
+  position: relative;
+}
+
+/* subtle dot grid */
+.app::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(14, 165, 233, 0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+section {
+  position: relative;
+  z-index: 1;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.section-label::before {
+  content: '';
+  width: 24px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.highlight {
+  color: var(--accent);
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(14, 165, 233, 0.35);
+  border-radius: 3px;
+}
