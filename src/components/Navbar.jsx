@@ -63,7 +63,7 @@ export default function Navbar({ activeSection }) {
           ))}
         </ul>
 
-        <a href="mailto:Magesh2001bgt@gmail.com" className="nav-cta">
+        <a href="mailto:Mageshbgt2001@outlook.com" className="nav-cta">
           Hire Me
         </a>
 

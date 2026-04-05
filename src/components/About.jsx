@@ -55,7 +55,7 @@ export default function About() {
                 skills with modern frontend workflows.
               </p>
               <div className="contact-row">
-                <a href="mailto:Magesh2001bgt@gmail.com" className="contact-chip">
+                <a href="mailto:Mageshbgt2001@outlook.com" className="contact-chip">
                   📧 Mageshbgt2001@outlook.com
                 </a>
                 <a href="tel:+919361088242" className="contact-chip">

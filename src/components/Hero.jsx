@@ -79,7 +79,7 @@ export default function Hero() {
 
           <motion.div className="hero-actions"
             initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.45 }}>
-            <a href="mailto:Magesh2001bgt@gmail.com" className="btn-primary">Get In Touch</a>
+            <a href="mailto:Mageshbgt2001@outlook.com" className="btn-primary">Get In Touch</a>
             <button className="btn-ghost"
               onClick={() => document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' })}>
               View Work <ArrowDown size={14} />
@@ -88,7 +88,7 @@ export default function Hero() {
 
           <motion.div className="hero-socials"
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }}>
-            <a href="mailto:Magesh2001bgt@gmail.com" className="social-link" title="Email"><Mail size={17} /></a>
+            <a href="mailto:Mageshbgt2001@outlook.com" className="social-link" title="Email"><Mail size={17} /></a>
             <a href="https://github.com" className="social-link" title="GitHub" target="_blank" rel="noreferrer"><GitBranch size={17} /></a>
             <a href="https://linkedin.com" className="social-link" title="LinkedIn" target="_blank" rel="noreferrer"><ExternalLink size={17} /></a>
           </motion.div>

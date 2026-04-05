@@ -31,13 +31,28 @@ export default function Contact() {
 
   const handleChange = e => setForm({ ...form, [e.target.name]: e.target.value })
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault()
-    const subject = encodeURIComponent(`Portfolio Contact from ${form.name}`)
-    const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`)
-    window.location.href = `mailto:Magesh2001bgt@gmail.com?subject=${subject}&body=${body}`
-    setSent(true)
-    setTimeout(() => setSent(false), 4000)
+
+    try {
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000'
+      const response = await fetch(`${apiUrl}/api/contact`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form)
+      })
+
+      if (response.ok) {
+        setSent(true)
+        setForm({ name: '', email: '', message: '' })
+        setTimeout(() => setSent(false), 4000)
+      } else {
+        alert('Failed to send message. Please try again.')
+      }
+    } catch (error) {
+      console.error('Error sending message:', error)
+      alert('An error occurred. Please try again later.')
+    }
   }
 
   return (
@@ -67,7 +82,7 @@ export default function Contact() {
           >
             <div className="contact-info-list">
               <CopyChip
-                value="Magesh2001bgt@gmail.com"
+                value="Mageshbgt2001@outlook.com"
                 display="Mageshbgt2001@outlook.com"
                 icon={<Mail size={16} />}
               />
@@ -94,7 +109,7 @@ export default function Contact() {
             </div>
 
             <a
-              href="mailto:Magesh2001bgt@gmail.com"
+              href="mailto:Mageshbgt2001@outlook.com"
               className="direct-email-btn"
             >
               <Mail size={16} />
@@ -116,7 +131,7 @@ export default function Contact() {
                   <label htmlFor="name">Your Name</label>
                   <input
                     id="name" name="name" type="text"
-                    placeholder="John Doe"
+                    placeholder="Enter Your Name"
                     value={form.name}
                     onChange={handleChange}
                     required
@@ -126,7 +141,7 @@ export default function Contact() {
                   <label htmlFor="email">Your Email</label>
                   <input
                     id="email" name="email" type="email"
-                    placeholder="john@example.com"
+                    placeholder="Enter Your Email address"
                     value={form.email}
                     onChange={handleChange}
                     required
@@ -138,15 +153,15 @@ export default function Contact() {
                 <textarea
                   id="message" name="message"
                   rows={5}
-                  placeholder="Hi Magesh, I'd love to connect about..."
+                  placeholder="Hi Magesh"
                   value={form.message}
                   onChange={handleChange}
                   required
                 />
               </div>
-              <button type="submit" className={`submit-btn ${sent ? 'sent' : ''}`}>
+              <button type="submit" className={`submit-btn ${sent ? 'sent' : ''}`} disabled={sent}>
                 {sent ? (
-                  <><Check size={16} /> Opened Mail Client!</>
+                  <><Check size={16} /> Message Sent!</>
                 ) : (
                   <><Send size={16} /> Send Message</>
                 )}
