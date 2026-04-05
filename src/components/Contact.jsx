@@ -68,7 +68,7 @@ export default function Contact() {
             <div className="contact-info-list">
               <CopyChip
                 value="Magesh2001bgt@gmail.com"
-                display="Magesh2001bgt@gmail.com"
+                display="Mageshbgt2001@outlook.com"
                 icon={<Mail size={16} />}
               />
               <CopyChip

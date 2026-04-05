@@ -56,7 +56,7 @@ export default function About() {
               </p>
               <div className="contact-row">
                 <a href="mailto:Magesh2001bgt@gmail.com" className="contact-chip">
-                  📧 Magesh2001bgt@gmail.com
+                  📧 Mageshbgt2001@outlook.com
                 </a>
                 <a href="tel:+919361088242" className="contact-chip">
                   📞 +91 93610 88242
