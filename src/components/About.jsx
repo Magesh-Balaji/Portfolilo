@@ -6,7 +6,7 @@ import './About.css'
 const stats = [
   { value: '1+', label: 'Year Experience', icon: <Briefcase size={16} /> },
   { value: 'MCA', label: 'Master of Comp. Apps', icon: <GraduationCap size={16} /> },
-  { value: '02+', label: 'Technologies', icon: <Zap size={16} /> },
+  { value: '2+', label: 'Technologies', icon: <Zap size={16} /> },
   { value: 'IIS', label: 'Deployment Expert', icon: <Terminal size={16} /> },
 ]
 
