@@ -64,7 +64,7 @@ export default function Hero() {
 
           <motion.p className="hero-desc"
             initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }}>
-            Software Engineer with 1+ year building production-level applications with
+            Software Engineer with 2+ year building production-level applications with
             <span className="ta"> C# / .NET</span>,
             <span className="ta"> React</span>, and
             <span className="ta"> Node.js</span>.
